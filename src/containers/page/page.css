@@ -1,0 +1,36 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 50px;
+    margin-left: 10px;
+    padding: 2px 10px 0px 0px;
+    top: 15px;
+    left: 15px;
+    position: absolute;
+    font-size: 35px!important;
+}
+
+.App-header {
+    background-color: #001A57;
+    height: 50px;
+    padding: 3px 20px 15px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+}
+
+.App-title {
+    font-size: 18px;
+    font-weight: bold;
+    top: 21px;
+    right: 15px;
+    position: absolute;
+
+}
+
+.App-intro {
+    font-size: large;
+}
