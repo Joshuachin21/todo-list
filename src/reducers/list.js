@@ -1,4 +1,5 @@
 import * as listActions from '../actions/listActions';
+import {compareListItems} from '../utils';
 
 const initialState = [];
 
@@ -36,9 +37,13 @@ const list = (state = initialState, action) => {
         case listActions.COMPLETE_ITEM_ACTION:
             return state.map(item =>
                 (item.id === action.id)
-                    ? {...item, completed: !item.completed, dateCompleted: !item.completed?null:new Date(Date.now())}
+                    ? {
+                        ...item,
+                        completed: !item.completed,
+                        dateCompleted: !item.completed === false ? null : Date.now()
+                    }
                     : item
-            );
+            ).sort(compareListItems);
 
         case listActions.UPDATE_ITEM_ACTION:
             return state.map(item =>

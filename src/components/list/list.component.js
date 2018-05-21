@@ -27,8 +27,6 @@ class CheckboxList extends React.Component {
         this.listItems = listItems;
 
         this.listItemsStub = listItemsStub;
-        console.log(listItems);
-        console.log(listItemsStub);
     }
 
     state = {
@@ -53,7 +51,6 @@ class CheckboxList extends React.Component {
 
     render() {
         const {classes} = this.props;
-        console.log(this.context.store);
         return (
             <div className={classes.root}>
                 <List>

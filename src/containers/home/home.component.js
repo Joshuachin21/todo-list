@@ -12,8 +12,6 @@ class Home extends React.Component {
 //redux action
     }
 
-
-
     render() {
         return (
             <div className="App">

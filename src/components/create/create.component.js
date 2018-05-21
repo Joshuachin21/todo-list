@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {withStyles} from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import {connect} from 'react-redux'
 import {ADD_ITEM} from '../../actions/listActions'
@@ -25,11 +22,9 @@ class CreateItem extends React.Component {
     handleDateChange = this.handleDateChange.bind(this);
 
     handleChange(event) {
-        console.log(event.target.value);
         this.setState({name: event.target.value});
     }
     handleDateChange(event) {
-        console.log(event.target.value);
         this.setState({dateDue: event.target.value});
     }
 
