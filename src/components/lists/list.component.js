@@ -22,7 +22,7 @@ let state = {
     checked: [0],
 };
 
-const TodoList = ({listItems, toggleTodo}) => (
+const TodoList = ({listItems, toggleTodo, editItem}) => (
     <div>
         <List>
             {listItems.map(listItem => (
@@ -40,7 +40,7 @@ const TodoList = ({listItems, toggleTodo}) => (
                     <Avatar alt="User1" src={defaultAvatar}/>
                     <ListItemText primary={`${listItem.title}`}/>
                     <ListItemSecondaryAction>
-                        <IconButton aria-label="Edit">
+                        <IconButton aria-label="Edit" onClick={()=>editItem(listItem)}>
                             <EditIcon/>
                         </IconButton>
                     </ListItemSecondaryAction>

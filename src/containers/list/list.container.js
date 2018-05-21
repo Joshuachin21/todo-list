@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import { COMPLETE_ITEM } from '../../actions/listActions'
+import { COMPLETE_ITEM, OPEN_EDIT } from '../../actions/listActions'
 import List from '../../components/lists/list.component';
 
 const mapStateToProps = state => ({
@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    toggleTodo: id => dispatch(COMPLETE_ITEM(id))
+    toggleTodo: id => dispatch(COMPLETE_ITEM(id)),
+    editItem: item => dispatch(OPEN_EDIT(item))
 });
 
 export default connect(
