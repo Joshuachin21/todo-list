@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
@@ -21,12 +21,22 @@ const styles = theme => ({
 });
 
 class CheckboxList extends React.Component {
+
+    constructor({listItems, listItemsStub}) {
+        super();
+        this.listItems = listItems;
+
+        this.listItemsStub = listItemsStub;
+        console.log(listItems);
+        console.log(listItemsStub);
+    }
+
     state = {
         checked: [0],
     };
 
     handleToggle = value => () => {
-        const { checked } = this.state;
+        const {checked} = this.state;
         const currentIndex = checked.indexOf(value);
         const newChecked = [...checked];
 
@@ -42,30 +52,29 @@ class CheckboxList extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
-        const listItems = [0, 1, 2, 3];
+        const {classes} = this.props;
+        console.log(this.context.store);
         return (
             <div className={classes.root}>
                 <List>
-                    {listItems.map(value => (
+                    {this.listItems.map(listItem => (
                         <ListItem
-                            key={value}
-                            role={undefined}
+                            key={listItem.id}
                             dense
                             button
-                            onClick={this.handleToggle(value)}
+                            onClick={this.handleToggle(listItem.id)}
                             className={classes.listItem}
                         >
                             <Checkbox
-                                checked={this.state.checked.indexOf(value) !== -1}
+                                checked={this.state.checked.indexOf(listItem.id) !== -1}
                                 tabIndex={-1}
                                 disableRipple
                             />
                             <Avatar alt="User1" src={defaultAvatar}/>
-                            <ListItemText primary={`Line item ${value + 1}`} />
+                            <ListItemText primary={`${listItem.title}`}/>
                             <ListItemSecondaryAction>
                                 <IconButton aria-label="Edit">
-                                    <EditIcon />
+                                    <EditIcon/>
                                 </IconButton>
                             </ListItemSecondaryAction>
                         </ListItem>

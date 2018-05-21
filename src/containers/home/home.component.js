@@ -1,18 +1,11 @@
 import React from "react";
 import axios from "axios";
-import "./page.css";
-import rbLogo from '../../../assets/Logo.png';
-import ListMaterial from '../../components/list/list.component';
+import "./home.css";
+import List from '../../containers/list/list.container';
 import CreateItem from '../../components/create/create.component';
 import Assignment from '@material-ui/icons/Assignment';
 
-class Page extends React.Component {
-    constructor({match}) {
-        super();
-        this.content = [];
-        this.chosenTemplate = [];
-        this.storeId = match.params.storeId;
-    }
+class Home extends React.Component {
 
     componentDidMount() {
 //redux action
@@ -26,11 +19,12 @@ class Page extends React.Component {
                     <span className="App-title">TODO-List</span>
                 </header>
                 <CreateItem/>
-                <ListMaterial/>
-
+                <div className="container">
+                    <List/>
+                </div>
             </div>
         );
     }
 }
 
-export default Page;
+export default Home;
