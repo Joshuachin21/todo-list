@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import "./home.css";
 import List from '../../containers/list/list.container';
 import CreateItem from '../../components/create/create.component';

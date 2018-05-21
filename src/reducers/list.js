@@ -7,18 +7,7 @@ const list = (state = initialState, action) => {
     switch (action.type) {
 
         case listActions.GET_ITEMS_ACTION:
-            return [
-                ...state,
-                {
-                    id: action.id,
-                    title: action.id,
-                    text: action.text,
-                    completed: false,
-                    dateDue: action.dateDue || null,
-                    dateCreated: Date.now(),
-                    dateUpdated: Date.now()
-                }
-            ];
+            return state;
 
         case listActions.ADD_ITEM_ACTION:
             return [

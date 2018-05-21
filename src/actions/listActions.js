@@ -1,4 +1,8 @@
+
+
 export const GET_ITEMS_ACTION = 'GET_ITEMS';
+export const RECEIVE_DATA_ACTION = 'RECEIVE_DATA';
+export const RECEIVE_DATA_ERROR_ACTION = 'RECEIVE_DATA_ERROR';
 export const ADD_ITEM_ACTION = 'ADD_ITEM';
 export const UPDATE_ITEM_ACTION = 'UPDATE_ITEM';
 export const DELETE_ITEM_ACTION = 'DELETE_ITEM';
@@ -9,8 +13,20 @@ export const UPDATE_EDIT_ITEM_ACTION = 'UPDATE_EDIT_ITEM';
 
 let idCounter = 0;
 
-export const GET_ITEMS = () => ({
-    type: GET_ITEMS_ACTION
+export const GET_ITEMS = () => {
+    return {
+        type: GET_ITEMS_ACTION
+    };
+};
+
+export const RECEIVE_DATA = (dataArr) => ({
+    type: RECEIVE_DATA_ACTION,
+    data: dataArr
+});
+
+export const RECEIVE_DATA_ERROR = (dataArr) => ({
+    type: RECEIVE_DATA_ACTION,
+    data: dataArr
 });
 
 export const ADD_ITEM = (title = '', dateDue = null, text = '') => ({

@@ -18,10 +18,6 @@ const styles = theme => ({
     },
 });
 
-let state = {
-    checked: [0],
-};
-
 const TodoList = ({listItems, toggleTodo, editItem}) => (
     <div>
         <List>
@@ -38,7 +34,7 @@ const TodoList = ({listItems, toggleTodo, editItem}) => (
                         disableRipple
                     />
                     <Avatar alt="User1" src={defaultAvatar}/>
-                    <ListItemText primary={`${listItem.title}`}/>
+                    <ListItemText primary={`${listItem.title}   ${listItem.dateDue ? '(' + listItem.dateDue + ')' : ''}`}/>
                     <ListItemSecondaryAction>
                         <IconButton aria-label="Edit" onClick={()=>editItem(listItem)}>
                             <EditIcon/>
